@@ -4,12 +4,15 @@ const routes = require('./routes/routes')
 const modulos = require('./routes/modulos');
 const colegios = require('./routes/colegios')
 
+const cors = require('cors');
+
 //AJUSTES
 app.set('port', 3000);
 require('dotenv').config()
 
 //MIDLEWARE
 app.use(express.json());
+app.use(cors({origin: '*'}));
 
 //RUTAS
 app.get('/',(req,res)=>{
